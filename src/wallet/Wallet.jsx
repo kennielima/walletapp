@@ -28,51 +28,51 @@ import ModalContent from './ModalContent';
 
 const names2 = [
     {
-        logo: <img src={w1} alt="p1" />,
+        logo: w1,
         para: '1inch Exchange',
         span: 'APP'
     }, {
-        logo: <img src={w2} alt="w2" />,
+        logo: w2,
         para: '2Key',
         span: 'APP'
     }, {
-        logo: <img src={w3} alt="w3" />,
+        logo: w3,
         para: '3Box',
         span: 'APP'
     }, {
-        logo: <img src={w4} alt="w4" />,
+        logo: w4,
         para: '88Mph',
         span: 'APP'
     }, {
-        logo: <img src={w5} alt="w5" />,
+        logo: w5,
         para: 'Aave',
         span: 'APP'
     }, {
-        logo: <img src={w6} alt="w6" />,
+        logo: w6,
         para: 'Adex Network',
         span: 'APP'
     }, {
-        logo: <img src={w7} alt="w7" />,
+        logo: w7,
         para: 'Affogato',
         span: 'APP'
     }, {
-        logo: <img src={w8} alt="w8" />,
+        logo: w8,
         para: 'Aka3 Email Alias',
         span: 'APP'
     }, {
-        logo: <img src={w9} alt="w9" />,
+        logo: w9,
         para: 'Alkemi',
         span: 'APP'
     }, {
-        logo: <img src={w10} alt="w10" />,
+        logo: w10,
         para: 'Ankr',
         span: 'APP'
     }, {
-        logo: <img src={w11} alt="w11" />,
+        logo: w11,
         para: 'Arbitrum',
         span: 'APP'
     }, {
-        logo: <img src={w12} alt="w12" />,
+        logo: w12,
         para: 'Astrotools.io',
         span: 'APP'
     },
@@ -80,51 +80,51 @@ const names2 = [
 
 const names = [
     {
-        logo: <img src={a1} alt="p1" />,
+        logo: a1,
         para: 'Rainbow',
         span: 'WALLET'
     }, {
-        logo: <img src={a2} alt="w2" />,
+        logo:a2,
         para: 'Walletconnect',
         span: 'WALLET'
     }, {
-        logo: <img src={a3} alt="w3" />,
+        logo: a3,
         para: 'Trust Wallet',
         span: 'WALLET'
     }, {
-        logo: <img src={a4} alt="w4" />,
+        logo: a4,
         para: 'Argent',
         span: 'WALLET'
     }, {
-        logo: <img src={a5} alt="w5" />,
+        logo: a5,
         para: 'MetaMask',
         span: 'WALLET'
     }, {
-        logo: <img src={a6} alt="w6" />,
+        logo: a6,
         para: 'Gnosis Safe MultiSig Wallet',
         span: 'WALLET'
     }, {
-        logo: <img src={a7} alt="w7" />,
+        logo: a7,
         para: 'Pillar',
         span: 'WALLET'
     }, {
-        logo: <img src={a8} alt="w8" />,
+        logo: a8,
         para: 'imToken',
         span: 'WALLET'
     }, {
-        logo: <img src={a9} alt="w9" />,
+        logo: a9,
         para: 'Onto',
         span: 'WALLET'
     }, {
-        logo: <img src={a10} alt="w10" />,
+        logo: a10,
         para: 'MathWallet',
         span: 'WALLET'
     }, {
-        logo: <img src={a11} alt="w11" />,
+        logo: a11,
         para: 'BitPay',
         span: 'WALLET'
     }, {
-        logo: <img src={a12} alt="w12" />,
+        logo: a12,
         para: 'Ledger Live',
         span: 'WALLET'
     },
@@ -137,16 +137,19 @@ function Wallet() {
     const [wlogo, setwLogo] = useState(null);
     const [aname, setAname] = useState(null);
     const [alogo, setAlogo] = useState(null);
+    const [item, setItem] = useState(null);
 
 
     const showHandler = (item) => {
         setClicked(true);
-            setwName(item.target.children[1].innerText);
-            setwLogo(item.logo);
-            setAname(item.target.children[1].innerText);
-            setAlogo(item.logo);
-        console.log(item)
-        console.log(item.target.childNodes[0]);
+        console.log({item})
+        setItem(item);
+        //     setwName(item.target.children[1].innerText);
+        //     setwLogo(item.logo);
+        //     setAname(item.target.children[1].innerText);
+        //     setAlogo(item.logo);
+        // console.log(item)
+        // console.log(item.target.childNodes[0]);
     }
     const hideHandler = () => {
         setClicked(false);
@@ -169,6 +172,7 @@ function Wallet() {
             onClose={hideHandler}
             activeName={active}
             wname={wname}
+            item={item}
             wlogo={wlogo}
             aname={aname}
             alogo={alogo}
@@ -180,8 +184,8 @@ function Wallet() {
             </Head>
             {active === 'wallet' && <Main>
                 {names.map((item) => (
-                    <Card onClick={showHandler} className="wallet" key={Math.random()}>
-                        {item.logo}
+                    <Card onClick={() => showHandler(item)} className="wallet" key={Math.random()}>
+                        <img src={item.logo} alt="p1" />
                         <p>{item.para}</p>
                         <span>{item.span}</span>
                     </Card>
@@ -189,8 +193,8 @@ function Wallet() {
             </Main>}
             {active === 'apps' && <Main>
                 {names2.map((item) => (
-                    <Card onClick={showHandler} className="apps" key={Math.random()}>
-                        {item.logo}
+                    <Card onClick={() => showHandler(item)} className="apps" key={Math.random()}>
+                        <img src={item.logo} alt="p1" />
                         <p>{item.para}</p>
                         <span>{item.span}</span>
                     </Card>
