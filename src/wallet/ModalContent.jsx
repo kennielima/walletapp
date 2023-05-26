@@ -4,22 +4,23 @@ import styled from 'styled-components';
 import a2s from '../images/a2s.png';
 
 
-function ModalContent(props) {
-    // console.log(props.wname)
+function ModalContent({item, activeName, onClose}) {
+    console.log({item})
 
     return (
-        <Modal onClose={props.onClose} >
+        <Modal onClose={onClose} >
             <div>
                 <img src={a2s} alt={a2s} />
                 <Ddiv>
                     <Span>
-                        {props.activeName === "wallet" && props.wname}
-                        {props.activeName === "apps" && props.aname}
+                        {activeName === "wallet" && item.name}
+                        {activeName === "apps" && item.name}
                     </Span>
-                    <Button>Connect Manually</Button>
                     <div>
-                        {props.activeName === "wallet" && props.wlogo}
-                        {props.activeName === "apps" && props.alogo}                            </div>
+                    <img src={item.logo} alt='' width={100} height={100} />
+                  </div>
+                    <Button>Connect Manually</Button>
+                   
                 </Ddiv>
             </div>
         </Modal>
