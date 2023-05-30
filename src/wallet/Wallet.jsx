@@ -25,8 +25,6 @@ import w10 from '../images/w10.jpeg';
 import w11 from '../images/w11.jpg';
 import w12 from '../images/w12.jpg';
 import ModalContent from './ModalContent';
-import Header from '../components/Header';
-import Image from '../components/Image';
 
 const names2 = [
     {
@@ -149,15 +147,11 @@ function Wallet() {
 
     return (
         <div>
-            {clicked && (<div>
-                {/* <Header /> */}
-            <ModalContent
+            {clicked && <ModalContent
                 onClose={hideHandler}
                 activeName={active}
                 item={item}
-            />
-            <Image/>
-            </div>)}
+            />}
             <Head>
                 <h1>Choose your wallet</h1>
                 <span className={active === "wallet" ? "activ" : ''} onClick={() => (setActive('wallet'))}>Wallets</span>

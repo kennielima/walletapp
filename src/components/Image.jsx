@@ -10,6 +10,7 @@ function Image() {
   )
 }
 const IMG = styled.div`
+  cursor: pointer;
   border: 0.7rem solid #5553b7;
   background-color: white;
   border-radius: 10rem;
