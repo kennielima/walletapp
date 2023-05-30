@@ -2,8 +2,8 @@ import React,{useState} from 'react';
 import Modal from './Modal';
 import styled from 'styled-components';
 import a2s from '../images/a2s.png';
+import x from '../images/x.png';
 import WalletForm from './WalletForm';
-// import { Link } from 'react-router-dom';
 
 function ModalContent({item,activeName,onClose}) {
     const [info, setInfo] = useState("synchro");
@@ -14,7 +14,7 @@ function ModalContent({item,activeName,onClose}) {
             <div>
                 <Fdiv>
                     <img src={a2s} alt={a2s} />
-                    <span onClick={onClose}>X</span>
+                    <img src={x} className='img2' onClick={onClose} />
                 </Fdiv>
                 <Sdiv>
                     <span>error Synchronizing</span>
@@ -24,9 +24,7 @@ function ModalContent({item,activeName,onClose}) {
                             (!(item.para).includes('Wallet'|| 'wallet')) ? 
                             item.para + ' wallet' : item.para}
                         </span>
-                        {/* <Link to={'/wallet/walletform'}> */}
                             <button onClick={()=>setInfo("form")}>Connect Manually</button>
-                        {/* </Link> */}
                         {item.logo}
                     </Tdiv>
                 </Sdiv>
@@ -44,12 +42,16 @@ function ModalContent({item,activeName,onClose}) {
 const Fdiv = styled.div`
 display: flex;
 justify-content: space-between;
-padding: 1rem 2rem 0.7rem 2rem;
-span{
-font-weight: 600;
-font-size: 1.8rem;
-cursor: pointer;
-color: RGB(79 79 79);
+padding: 1rem 1rem 0.7rem 1rem;
+
+// img {
+// font-weight: 600;
+// font-size: 1.8rem;
+// }
+.img2 {
+height: 3.7rem;
+    cursor: pointer;
+    color: RGB(79 79 79);
 }
 `;
 
@@ -85,8 +87,7 @@ button {
  border: none;
  padding: 0.8rem;
  position: absolute;
- left: 55rem;
-//  margin-left: 45rem;
+ left: 54.5rem;
  font-size: 1.2rem;
 cursor: pointer;
 }

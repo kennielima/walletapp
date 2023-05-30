@@ -15,7 +15,7 @@ const IMG = styled.div`
   border-radius: 10rem;
   height: 2.5rem;
   width: 2.5rem;
-  margin: 34rem 2rem 2rem 84rem;
+  margin: 38rem 2rem 2rem 84rem;
   box-shadow: 0px 2px 6px 1.5px #565555ca;
   position: fixed;
   z-index: -2;

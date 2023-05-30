@@ -30,12 +30,9 @@ const Bd = styled.div`
 
 const Ol = styled.div`
     position: fixed;
-    top: 20vh;
-    left: 6%;
-    // margin:auto;
-    // display: grid;
-    // align-items: center;
-    margin-left: 4rem;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     height: auto;
     width: 78%;
     background-color: white;
