@@ -38,6 +38,9 @@ gap: 30rem;
 box-shadow: 5px 4px 15px 4px #88888820;
 height: 79px;
 padding: 0 0.5rem;
+position: relative;
+z-index: 100;
+
 @media(max-width:30rem){
     width: auto;
     gap: 6rem;

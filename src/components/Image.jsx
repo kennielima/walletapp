@@ -19,7 +19,7 @@ const IMG = styled.div`
   margin: 38rem 2rem 2rem 84rem;
   box-shadow: 0px 2px 6px 1.5px #565555ca;
   position: fixed;
-  z-index: -2;
+  z-index: 100;
   span {
     font-weight: 800;
     color: #5553b7;
