@@ -20,6 +20,9 @@ const IMG = styled.div`
   box-shadow: 0px 2px 6px 1.5px #565555ca;
   position: fixed;
   z-index: 100;
+  @media(max-width:30rem){
+  margin: 55rem 2rem 2rem 25rem;
+  }
   span {
     font-weight: 800;
     color: #5553b7;
@@ -36,6 +39,10 @@ const IMG = styled.div`
     left: -3.2px;
   color: #5553b7;
   transform: scaleX(-1);
+  @media(max-width:30rem){
+        top: -4.75px;
+    left: -2.5px;
+  }
   }
 `
 export default Image;
