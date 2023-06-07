@@ -1,3 +1,11 @@
+@media(max-width: 30rem){
+  html {
+    font-size: 80%;
+  }
+  * {
+    width: auto;
+  }
+}
 * {
     font: sans-serif;
     }

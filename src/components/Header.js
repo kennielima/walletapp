@@ -12,16 +12,19 @@ function Header() {
             </Logo>
             <Nav>
                 <Link to={'/home'}>
-                    <span>Home</span>
+                    <span className='links'>Home</span>
                 </Link>
                 <Link to={'/wallet'}>
-                    <span>Connect Dconnect</span>
+                    <span className='links'>Connect Dconnect</span>
                 </Link>
                 <Link to={'/home'}>
-                    <span>Contact us</span>
+                    <span className='links'>Contact us</span>
                 </Link>
                 <Link to={'/wallet'}>
-                    <span>FAQ</span>
+                    <span className='links'>FAQ</span>
+                </Link>
+                <Link to={'/wallet'}>
+                    <span className='medialink'>Connect</span>
                 </Link>
             </Nav>
         </Head>
@@ -35,6 +38,12 @@ gap: 30rem;
 box-shadow: 5px 4px 15px 4px #88888820;
 height: 79px;
 padding: 0 0.5rem;
+@media(max-width:30rem){
+    width: auto;
+    gap: 6rem;
+box-shadow: none;
+height: 65px;
+}
 `;
 
 const Logo = styled(NavLink)`
@@ -47,7 +56,11 @@ color: #1D4ED8;
 
 span{
     font-size: 25px;
-font-weight: 500;
+    font-weight: 500;
+    @media(max-width:30rem){
+font-size: 1.5rem;
+// font-weight: 800;
+    }
 }
 img {
     height: 2.5rem;
@@ -62,6 +75,10 @@ display: flex;
 justify-content: space-between;
 width: 90%;
 align-items: center; 
+@media(max-width:30rem){
+    margin: auto;
+    padding-right: 1rem;
+        }
 `;
 
 const Link = styled(NavLink)`
@@ -69,5 +86,20 @@ text-decoration: none;
 color: #1E40AF;
 font-size: 20px;
 font-weight: 700;
+
+.links {
+    display: flex;
+@media(max-width:30rem){
+    display: none;
+}
+}
+.medialink {
+    display: none;
+    @media(max-width:30rem){
+        display: flex;
+font-size: 1.8rem;
+font-weight: 700;
+    }
+}
 `;
 export default Header;

@@ -41,6 +41,9 @@ const Ol = styled.div`
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
     z-index: 30;
     animation: slide-down 300ms ease-out forwards;
+    @media(max-width:30rem){
+      width: 95%;
+    }
   ;`
   
 export default Modal;

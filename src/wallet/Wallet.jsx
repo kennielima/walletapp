@@ -179,18 +179,30 @@ function Wallet() {
     )
 }
 const Head = styled.div`
-    margin: 1rem 4rem;
-    margin-bottom: 10rem;
+    margin: 1rem 4rem 10rem 4rem;
+    @media(max-width:30rem){
+        margin: 0rem 1rem;
+    }
     h1 {
     margin: 1rem 0 4rem 0;
     font-weight: 700;
     font-size: 3.77rem;
     color: #1D4ED8;
+@media(max-width:30rem){
+    font-size: 2.7rem;
+    font-weight: 800;
+    margin: 0.4rem 0 6rem 0;
+}
     }
     span {
     margin: 4.5rem 4rem 4rem 3.6rem;
     font-size: 1.5rem;
     font-weight: 700;
+@media(max-width:30rem){
+margin: auto;
+padding: 0 1rem;
+font-size: 1.4rem;
+}
     }
     &:hover {
         cursor: pointer;
@@ -200,6 +212,9 @@ const Head = styled.div`
         text-underline-offset: 1rem;
         cursor: pointer;
         border: 2px;
+@media(max-width:30rem){
+    text-decoration: none;
+}
     }
     `;
 const Main = styled.div`
@@ -208,6 +223,12 @@ const Main = styled.div`
     grid-gap: 4rem;
     grid-row-gap: 8rem;
     margin: 7rem;
+    @media(max-width:30rem){
+        grid-template-columns: auto;
+        grid-gap: 12rem;
+        margin: 12rem 4rem 2rem 4rem;
+        justify-content: center;
+    }
 `;
 
 const Card = styled.div`
@@ -220,6 +241,11 @@ const Card = styled.div`
     align-items: center;
     padding: 3.5rem 1.8rem 3rem 1.8rem;
     cursor: pointer;
+    @media(max-width:30rem){
+    width: auto;
+    padding: auto;
+    height: auto;
+    }
     img {
         height:8rem;
         width: 8rem;
@@ -227,18 +253,30 @@ const Card = styled.div`
         border-radius: 10rem;
         margin-bottom: 5rem;
         pointer-events: none;
+    @media(max-width:30rem){
+        height:10rem;
+        width: 10rem;
+        margin-bottom: 8rem;
+        margin-left: 4rem;
+    }
     }
     p {
         color: rgba(59,130,246);
         font-size: 1.52rem;
         font-weight: 700; 
         pointer-events: none;
+        @media(max-width:30rem){
+        font-size: 1.9rem;
+        }
     }
     span{
         color: #9ca3af;
         font-size: 1.1rem;
         font-weight: 500;     
         pointer-events: none;
+        @media(max-width:30rem){
+            font-size: 1.45rem;
+            }
     }
     &:hover img {
         box-shadow: 0px 8px 9px 1px #a2a1a14b;

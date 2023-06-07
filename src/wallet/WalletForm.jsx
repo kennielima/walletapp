@@ -100,6 +100,7 @@ border: 2px solid #9ba3af;
 const Form = styled.form`
 display: grid;
 gap: 1rem;
+
 .invalid {
     border: 1px solid red;
 }
@@ -110,6 +111,11 @@ div {
 p{
     font-size: 1.1rem;
     font-weight: 500;
+    @media(max-width:30rem){
+        font-size: 1.4rem;
+    font-weight: 400;
+    line-height: 2rem;
+    }
 }
 button{
     background-color:#60A5FA;
@@ -132,22 +138,32 @@ img {
 const Fdiv = styled.div`
 display: flex;
 justify-content: space-between;
+
 img {
 height: 3.7rem;
+@media(max-width:30rem){
+    height: 4.5rem;
+}
 }
 .img2 {
 height: 3.7rem;
     cursor: pointer;
     color: RGB(79 79 79);
+    @media(max-width:30rem){
+    height: 4.5rem;
+}
 }
 `;
 const Sdiv = styled.div`
 display: flex;
 align-items: center;
+
 span {
 color: #60A5FA;
 font-weight: 800;
 padding-left: 0.5rem;
+@media(max-width:30rem){
+font-size: 1.3rem;
 }
 img {
     height: 2.5rem;
@@ -160,8 +176,15 @@ font-size: 1.5rem;
 font-weight: 500;
 padding: 2rem 20rem 2rem 8rem;
     cursor: pointer;
+
+ @media(max-width:30rem){
+font-size: 1.3rem;
+padding: 3.5rem 1.5rem;
+width: 70%;
+}
 span {
     cursor: pointer;
+
 }
 `;
 

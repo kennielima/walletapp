@@ -60,11 +60,17 @@ display: grid;
 border: 0.15rem solid #ef4444;
 border-radius: 0.5rem;
 padding: 1.5rem 0.5rem;
+@media(max-width:30rem){
+ padding: 1.7rem 1rem;
+}
 span {
 color: #dc2d2c;
 font-size: 0.85rem;
 font-weight: 500;
-
+@media(max-width:30rem){
+    font-size: 1.1rem;
+    padding-left: 0.5rem;
+}
 }
 `;
 const Tdiv = styled.div`
@@ -72,13 +78,22 @@ display: flex;
 justify-content: space-between;
 padding: 0 0.5rem 0 1.4rem;
 align-items: center;
+
 img {
     height: 3rem;
+    @media(max-width:30rem){
+        padding-bottom: 0.7rem;
+    height: 3.5rem;
+    }
 }
 span {
     color: black;
     font-weight:700;
     font-size: 1rem;
+    @media(max-width:30rem){
+        font-size: 1.2rem;
+        padding-left: 0;
+    }
 }
 button {
  background-color: #1f2937;
@@ -90,6 +105,13 @@ button {
  left: 54.5rem;
  font-size: 1.2rem;
 cursor: pointer;
+@media(max-width:30rem){
+    left: 13rem;
+    bottom: 3.5rem;
+ font-size: 1rem;
+ padding: 1rem;
+ font-weight: bold;
+}
 }
  `;
 export default ModalContent;

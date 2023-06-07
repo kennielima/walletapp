@@ -103,20 +103,26 @@ const Main = styled.div`
     gap: 2rem;
     margin: 10rem 5rem 0 2.5rem;
     width: 100vp;
+    
+@media(max-width:30rem){
+    margin: 3rem;
+    grid-template-columns: auto;
+}
 `;
 const Cards = styled.div`
     display: flex;
     flex-direction: column;
-    gap: 0rem;
     height: auto;
     width: 24rem;
     background-color: #1E40AF;
     border-radius: 5px;
     text-align: center;
-    color: white;
-    align-items: center;
-    justify-content: center;
-    padding: 2.25rem 1.5rem 2.25rem 1.5rem;
+    padding: 2.2rem 1.5rem 1.8rem 1.5rem;
+
+@media(max-width:30rem){
+    width: auto;
+    padding: 3.2rem 0 2.6rem 0;
+}
     a {
     text-decoration: none;
     color: white;
@@ -125,24 +131,43 @@ const Cards = styled.div`
     font-size: 1.6rem;
     font-weight: 700;  
     margin: 0.7rem;
+    @media(max-width:30rem){
+        margin: 1.1rem;
+        margin-bottom: 1.5rem;
+        font-size: 1.8rem;
+    font-weight: 800;
+    }
     }
     .para {
     font-size: 1.52rem;
     font-weight: 700; 
+    @media(max-width:30rem){
+        font-size: 1.4rem;
+    }
     }
     button {
     text-align: center;
     border-radius: 50px;
-    margin: 1.2rem;
+    margin: 1rem;
     padding: 0.8rem 2.5rem;
     color: #1E40AF;
     font-weight: 500;
     font-size: 1.1rem;
     border: none;
+
+    @media(max-width:30rem){
+    margin: 0.3rem;
+    font-size: 1.4rem;
+    padding: auto;
+    }
     }
     img {
         height: 5rem;
         width: 5rem;
+    @media(max-width:30rem){
+        height: 6rem;
+        width: 6rem;
+    }
     }
     `;
 export default Card;
