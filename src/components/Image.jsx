@@ -38,6 +38,10 @@ const IMG = styled.div`
     left: -3.2px;
   color: #5553b7;
   transform: scaleX(-1);
+  // @media(max-width:30rem){
+  //       top: -4.75px;
+  //   left: -2.5px;
+  // }
   }
 `
 export default Image;
