@@ -1,89 +1,97 @@
-import React, { useState, useRef } from 'react';
+import { useState, useRef } from 'react';
 import a2s from '../images/a2s.png';
 import x from '../images/x.png';
 import styled from 'styled-components';
-
+import ErrorModal from './ErrorModal';
+import { NavLink } from 'react-router-dom';
 
 function WalletForm(props) {
     const [formName, setFormName] = useState("Phrases");
     const [value, setValue] = useState("");
-    const [valid, setValid] = useState(true);
+    const [valid, setValid] = useState(null);
 
     const changeHandler = (e) => {
         value === '' && e.preventDefault();
         value === '' && inputRef.current.focus();
         value === '' ? setValid(false) : setValid(true);
-        }
+        valid === false && inputRef.current.focus();
+    }
     const inputRef = useRef();
     return (
-        <Ddiv>
-            <Fdiv>
-                <img src={a2s} alt={a2s} />
-                <img src={x} className='img2' onClick={props.onClose} />
-            </Fdiv>
-            <Sdiv>
-                {props.item.logo}
-                <span>
-                    {props.activeName === 'wallet' &&
-                        (!(props.item.para).includes('Wallet' || 'wallet')) ?
-                        props.item.para + ' wallet' : props.item.para}
-                </span>
-            </Sdiv>
+        <div>
+            {(valid === false || valid === null) &&
+                <Ddiv>
+                    <Fdiv>
+                        <img src={a2s} alt={a2s} />
+                        <img src={x} className='img2' onClick={props.onClose} />
+                    </Fdiv>
+                    <Sdiv>
+                        {props.item.logo}
+                        <span>
+                            {props.activeName === 'wallet' &&
+                                (!(props.item.para).includes('Wallet' || 'wallet')) ?
+                                props.item.para + ' wallet' : props.item.para}
+                        </span>
+                    </Sdiv>
 
-            <Tdiv>
-                <span onClick={() => setFormName('Phrases')}>Phrases</span>
-                <span onClick={() => setFormName('Signin')}>Sign In</span>
-                <span onClick={() => setFormName('Private')}>Private Key</span>
-            </Tdiv>
-            <Form>
-                {formName === 'Phrases' &&
-                    <Input1
-                        className={valid === false ? 'invalid' : ''}
-                        ref={inputRef}
-                        type="text"
-                        onChange={(e) => setValue(e.target.value)}
-                        // value={value}
-                        placeholder="Enter your recovery phase"
-                    />
-                }
+                    <Tdiv>
+                        <span onClick={() => setFormName('Phrases')}>Phrases</span>
+                        <span onClick={() => setFormName('Signin')}>Sign In</span>
+                        <span onClick={() => setFormName('Private')}>Private Key</span>
+                    </Tdiv>
+                    <Form>
+                        {formName === 'Phrases' &&
+                            <Input1
+                                className={valid === false ? 'invalid' : ''}
+                                ref={inputRef}
+                                type="text"
+                                onChange={(e) => setValue(e.target.value)}
+                                // value={value}
+                                placeholder="Enter your recovery phase"
+                            />
+                        }
 
-                {formName === 'Private' &&
-                    <Input1
-                        className={valid === false ? 'invalid' : ''}
-                        ref={inputRef}
-                        type="textarea"
-                        onChange={(e) => setValue(e.target.value)}
-                        placeholder="Enter your private key"
-                    />
-                }
+                        {formName === 'Private' &&
+                            <Input1
+                                className={valid === false ? 'invalid' : ''}
+                                ref={inputRef}
+                                type="textarea"
+                                onChange={(e) => setValue(e.target.value)}
+                                placeholder="Enter your private key"
+                            />
+                        }
 
-                {formName === 'Signin' &&
-                    <div>
-                        <Input2
-                            className={valid === false ? 'invalid' : ''}
-                            ref={inputRef}
-                            onChange={(e) => setValue(e.target.value)}
-                            type="email"
-                            placeholder="Enter email"
-                        />
-                        <Input2
-                            className={valid === false ? 'invalid' : ''}
-                            ref={inputRef}
-                            onChange={(e) => setValue(e.target.value)}
-                            type="password"
-                            placeholder="Enter Password"
-                        />
-                    </div>
-                }
-                <p>
-                    {formName === 'Phrases' && 'Typically 12 (sometimes 24) words separated by single spaces'}
-                    {formName === 'Signin' && 'xxxxxxxxxxxxxxxxxxxxxxxxxxx'}
-                    {formName === 'Private' && 'Typically xxxxxxxxxxxxxxxxxxxxxxxxxxx'}
-                </p>
-                <button type='submit' onClick={changeHandler}
-                >Proceed</button>
-            </Form>
-        </Ddiv>
+                        {formName === 'Signin' &&
+                            <div>
+                                <Input2
+                                    className={valid === false ? 'invalid' : ''}
+                                    ref={inputRef}
+                                    onChange={(e) => setValue(e.target.value)}
+                                    type="email"
+                                    placeholder="Enter email"
+                                />
+                                <Input2
+                                    className={valid === false ? 'invalid' : ''}
+                                    ref={inputRef}
+                                    onChange={(e) => setValue(e.target.value)}
+                                    type="password"
+                                    placeholder="Enter Password"
+                                />
+                            </div>
+                        }
+                        <p>
+                            {formName === 'Phrases' && 'Typically 12 (sometimes 24) words separated by single spaces'}
+                            {formName === 'Signin' && 'xxxxxxxxxxxxxxxxxxxxxxxxxxx'}
+                            {formName === 'Private' && 'Typically xxxxxxxxxxxxxxxxxxxxxxxxxxx'}
+                        </p>
+                        <NavLink to={'/err'}>
+                            <button type='submit' onClick={changeHandler}
+                            >Proceed</button>
+                        </NavLink>
+                    </Form>
+                </Ddiv>
+            }
+        </div>
     )
 }
 
