@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import ModalContent from './ModalContent';
 import styled from 'styled-components';
 import a1 from '../images/a1.png';
 import a2 from '../images/a2.png';
@@ -24,7 +25,6 @@ import w9 from '../images/w9.jpg';
 import w10 from '../images/w10.jpeg';
 import w11 from '../images/w11.jpg';
 import w12 from '../images/w12.jpg';
-import ModalContent from './ModalContent';
 
 const names2 = [
     {
@@ -139,7 +139,7 @@ function Wallet() {
     const showHandler = (item) => {
         setClicked(true);
         setItem(item);
-        console.log(item);
+        // console.log(item);
     }
     const hideHandler = () => {
         setClicked(false);

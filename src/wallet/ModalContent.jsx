@@ -28,7 +28,7 @@ function ModalContent({item,activeName,onClose}) {
                         {item.logo}
                     </Tdiv>
                 </Sdiv>
-                </div>
+            </div>
                 }
                 {info === "form" && <WalletForm 
                 onClose={onClose}
