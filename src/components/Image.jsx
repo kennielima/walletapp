@@ -6,11 +6,12 @@ function Image() {
     const s1 = document.createElement("script");
     const s0 = document.getElementsByTagName("script")[0];
     s1.async = true;
-    s1.src = 'https://embed.tawk.to/64ab2faecc26a871b02759c5/1h4ub4han';
+    s1.src = 'https://embed.tawk.to/64ad3e3ecc26a871b027b474/1h52bm9mc';
     s1.charset = 'UTF-8';
     s1.setAttribute('crossorigin', '*');
     s0.parentNode.insertBefore(s1, s0);
   }, []);
+
 //   return (
 //     <IMG>
 //    <span> ...</span>
@@ -18,39 +19,39 @@ function Image() {
 // </IMG>
 //   )
 }
-const IMG = styled.div`
-  cursor: pointer;
-  border: 0.7rem solid #5553b7;
-  background-color: white;
-  border-radius: 10rem;
-  height: 2.5rem;
-  width: 2.5rem;
-  // margin: 38rem 2rem 2rem 84rem;
-  box-shadow: 0px 2px 6px 1.5px #565555ca;
-  position: fixed;
-  bottom: 1rem;
-  right: 2rem;
-  z-index: 100;
-  span {
-    font-weight: 800;
-    color: #5553b7;
-    position: absolute;
-    top: -8px;
-    left: 6px;
-    font-size: 2rem;
-  }
-  svg {
-  height: 3.3rem;
-  width: 2.9rem;
-  position: absolute;
-    top: -6.25px;
-    left: -3.2px;
-  color: #5553b7;
-  transform: scaleX(-1);
-  @media(max-width:30rem){
-        top: -4.75px;
-    left: -2.5px;
-  }
-  }
-`
+// const IMG = styled.div`
+//   cursor: pointer;
+//   border: 0.7rem solid #5553b7;
+//   background-color: white;
+//   border-radius: 10rem;
+//   height: 2.5rem;
+//   width: 2.5rem;
+//   // margin: 38rem 2rem 2rem 84rem;
+//   box-shadow: 0px 2px 6px 1.5px #565555ca;
+//   position: fixed;
+//   bottom: 1rem;
+//   right: 2rem;
+//   z-index: 100;
+//   span {
+//     font-weight: 800;
+//     color: #5553b7;
+//     position: absolute;
+//     top: -8px;
+//     left: 6px;
+//     font-size: 2rem;
+//   }
+//   svg {
+//   height: 3.3rem;
+//   width: 2.9rem;
+//   position: absolute;
+//     top: -6.25px;
+//     left: -3.2px;
+//   color: #5553b7;
+//   transform: scaleX(-1);
+//   @media(max-width:30rem){
+//         top: -4.75px;
+//     left: -2.5px;
+//   }
+//   }
+// `
 export default Image;
